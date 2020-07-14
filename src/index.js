@@ -1,26 +1,22 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // your code here
-});
-
 let input = document.querySelector("#new-task-description")
 let button = document.querySelector("#submit-button")
 let list = document.querySelector("#tasks")
-let form 
+let newForm = document.querySelector("#create-task-form")
 
-// button.addEventListener("click", function(){
+ newForm.addEventListener("submit", function(e){
+   e.preventDefault()
+   console.log(e.target)
+   let inputLi = document.createElement("li")
+  let input = document.querySelector("#new-task-description").value 
+  inputLi.innerHTML = input
+  list.append(inputLi)
+  
+ });
 
-// });
+});
 
-function renderTask(taskObj){
-  let taskLi = document.createElement("li")
-  taskLi.innetHTML = `
-  ${taskLi}
-  `
-}
 
-function showInput() {
-  let taskDescription = document.getElementById("task-description")
-  document.getElementById('tasks').innerHTML = `<li>${taskDescription.value}</li>`;
-}
 
-function logSubmit(event) {}
+
+
